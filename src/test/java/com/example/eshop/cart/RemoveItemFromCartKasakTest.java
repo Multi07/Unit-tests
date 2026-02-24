@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RemoveItemFromCartTest {
+public class RemoveItemFromCartKasakTest {
     @Test
     @DisplayName("Should remove the newly create item from cart")
-    void CreateNewOrderTest() {
+    void RemoveItemKasakTest() {
         Cart cart = new Cart();
         int quantity = 3;
         String name = "Book about something Interesting";

@@ -1,20 +1,19 @@
 package com.example.eshop.order;
 
 import com.example.eshop.cart.Cart;
-import com.example.eshop.payment.CreditCardPaymentProcessor;
 import com.example.eshop.product.PhysicalProduct;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-public class PlaceOrderTest {
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class OrderKasakTest {
     @Test
-    @DisplayName("Should succesfully send an order")
-    void OrderServiceTest() {
-        CreditCardPaymentProcessor creditCard = new CreditCardPaymentProcessor();
-        creditCard.processPayment(new BigDecimal("100.00"));
-        OrderService os = new OrderService(creditCard);
+    @DisplayName("Should Create a valid Order")
+    void CreateNewOrderKasakTest() {
         Cart cart = new Cart();
         int quantity = 3;
         String name = "Book about something Interesting";
@@ -24,6 +23,10 @@ public class PlaceOrderTest {
         BigDecimal shippingCost = new BigDecimal(10);
         PhysicalProduct product = new PhysicalProduct(name, description, price, weight, shippingCost);
         cart.addItem(product, quantity);
-        os.placeOrder(cart);
+        Order order = new Order(cart);
+
+        assertAll("Verify Order Attributes",
+                () -> assertEquals(cart.getItems(), order.getItems(), "Cart items should match order items"),
+                () -> assertEquals(cart.calculateTotal(), order.getTotalAmount(), "Total price should match order price"));
     }
 }

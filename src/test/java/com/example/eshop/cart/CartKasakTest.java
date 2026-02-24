@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CartTest {
+public class CartKasakTest {
     @Test
     @DisplayName("Should create new Cart Item")
-    void CreateNewCartItemTest() {
+    void CreateNewCartItemKasakTest() {
         int quantity = 3;
         String name = "Book about something Interesting";
         String description = "This is the description2";
