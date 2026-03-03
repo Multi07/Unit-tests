@@ -6,9 +6,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrderKasakTest {
     @Test
@@ -27,6 +28,9 @@ public class OrderKasakTest {
 
         assertAll("Verify Order Attributes",
                 () -> assertEquals(cart.getItems(), order.getItems(), "Cart items should match order items"),
-                () -> assertEquals(cart.calculateTotal(), order.getTotalAmount(), "Total price should match order price"));
+                () -> assertEquals(cart.calculateTotal(), order.getTotalAmount(), "Total price should match order price"),
+                () -> assertEquals(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS), order.getOrderDate().truncatedTo(ChronoUnit.SECONDS), "Date should match"),
+                () -> assertEquals(OrderStatus.PENDING, order.getStatus(), "Status should match"),
+                () -> assertNotNull(order.getId()));
     }
 }

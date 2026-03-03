@@ -27,6 +27,6 @@ public class RemoveItemFromCartKasakTest {
 
         assertAll("Verify Order Attributes",
                 () -> assertNotEquals(cart.getItems(), order.getItems(), "Cart items should not match order items"),
-                () -> assertNotEquals(cart.calculateTotal(), order.getTotalAmount(), "Total price should match order price"));
+                () -> assertNotEquals(cart.calculateTotal(), order.getTotalAmount(), "Total price should NOT match order price"));
     }
 }

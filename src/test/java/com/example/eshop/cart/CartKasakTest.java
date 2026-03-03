@@ -21,11 +21,12 @@ public class CartKasakTest {
         BigDecimal shippingCost = new BigDecimal(10);
         PhysicalProduct product = new PhysicalProduct(name, description, price, weight, shippingCost);
         CartItem cartItem = new CartItem(product, quantity);
+        cartItem.setQuantity(2);
 
         assertAll("Verify CartItem Attributes",
                 () -> assertEquals(product, cartItem.getProduct(),  "Product should match"),
-                () -> assertEquals(quantity, cartItem.getQuantity(), "Quantity should match"));
-
+                () -> assertEquals(2, cartItem.getQuantity(), "Quantity should match"),
+                () -> assertEquals(product.getPrice().multiply(BigDecimal.valueOf(2)), cartItem.getTotalPrice(), "Price should match"));
     }
 
 }
