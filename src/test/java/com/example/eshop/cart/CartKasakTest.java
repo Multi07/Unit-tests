@@ -28,5 +28,4 @@ public class CartKasakTest {
                 () -> assertEquals(2, cartItem.getQuantity(), "Quantity should match"),
                 () -> assertEquals(product.getPrice().multiply(BigDecimal.valueOf(2)), cartItem.getTotalPrice(), "Price should match"));
     }
-
 }
