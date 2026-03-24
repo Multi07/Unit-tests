@@ -1,6 +1,8 @@
 package com.example.eshop.Product;
 
 import com.example.eshop.product.DigitalProduct;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -110,5 +112,25 @@ public class DigitalProductKasakTest {
         //Assert
         assertAll("Verify product attributes",
                 () -> assertNotNull(product.getDownloadUrl()));
+    }
+    @ParameterizedTest(name = "Test {index}: Name={0}, Price={2}")
+    @DisplayName("Should validate various digital product configurations")
+    @CsvSource({
+            "E-book JUnit 5, Master JUnit, 19.99, https://download.com/1",
+            "Java Guide, Learn Java fast, 29.50, https://download.com/2",
+            "Spring Boot Tips, Advanced Boot, 0.00, https://download.com/3"
+    })
+    void verifyMultipleDigitalProducts(String name, String description, BigDecimal price, String url) {
+        // Arrange & Act
+        DigitalProduct product = new DigitalProduct(name, description, price, url);
+
+        // Assert
+        assertAll("Product integrity check",
+                () -> assertEquals(name, product.getName()),
+                () -> assertEquals(description, product.getDescription()),
+                () -> assertEquals(price, product.getPrice()),
+                () -> assertEquals(url, product.getDownloadUrl()),
+                () -> assertNotNull(product.getDownloadUrl())
+        );
     }
 }
