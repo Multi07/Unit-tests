@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RemoveItemFromCartKasakTest {
     @Test
-    @DisplayName("Should remove the newly create item from cart")
+    @DisplayName("Should remove the newly create item from cart, ")
     void RemoveItemKasakTest() {
         Cart cart = new Cart();
         int quantity = 3;

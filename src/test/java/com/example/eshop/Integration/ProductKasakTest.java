@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ProductTest {
+public class ProductKasakTest {
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
     void createNewPhysicalProductKasakTest() {

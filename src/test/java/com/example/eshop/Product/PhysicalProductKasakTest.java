@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PhysicalProductKasakTest {
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
-    void VerifyProductName() {
+    void VerifyProductNameKasakTest() {
         String name = "Book about something Interesting";
         String description = "This is the description2";
         BigDecimal price = new BigDecimal(10);
@@ -25,7 +25,7 @@ public class PhysicalProductKasakTest {
     }
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
-    void VerifyProductDescription() {
+    void VerifyProductDescriptionKasakTest() {
         String name = "Book about something Interesting";
         String description = "This is the description2";
         BigDecimal price = new BigDecimal(10);
@@ -39,7 +39,7 @@ public class PhysicalProductKasakTest {
     }
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
-    void VerifyProductPrice() {
+    void VerifyProductPriceKasakTest() {
         String name = "Book about something Interesting";
         String description = "This is the description2";
         BigDecimal price = new BigDecimal(10);
@@ -54,7 +54,7 @@ public class PhysicalProductKasakTest {
     }
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
-    void VerifyProductWeight() {
+    void VerifyProductWeightKasakTest() {
         String name = "Book about something Interesting";
         String description = "This is the description2";
         BigDecimal price = new BigDecimal(10);
@@ -70,7 +70,7 @@ public class PhysicalProductKasakTest {
     }
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
-    void VerifyProductShippingCost() {
+    void VerifyProductShippingCostKasakTest() {
         String name = "Book about something Interesting";
         String description = "This is the description2";
         BigDecimal price = new BigDecimal(10);
@@ -84,7 +84,7 @@ public class PhysicalProductKasakTest {
     }
     @Test
     @DisplayName("Should create a valid physical product with all attributes")
-    void VerifyProductID() {
+    void VerifyProductIDKasakTest() {
         String name = "Book about something Interesting";
         String description = "This is the description2";
         BigDecimal price = new BigDecimal(10);

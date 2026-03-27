@@ -120,7 +120,7 @@ public class DigitalProductKasakTest {
             "Java Guide, Learn Java fast, 29.50, https://download.com/2",
             "Spring Boot Tips, Advanced Boot, 0.00, https://download.com/3"
     })
-    void verifyMultipleDigitalProducts(String name, String description, BigDecimal price, String url) {
+    void verifyMultipleDigitalProductsKasakTest(String name, String description, BigDecimal price, String url) {
         // Arrange & Act
         DigitalProduct product = new DigitalProduct(name, description, price, url);
 
